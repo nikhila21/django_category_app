@@ -1,0 +1,3 @@
+django
+pyexcel-xls
+pyexcel-xlsx

@@ -1,0 +1,61 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/category_app.css' %}">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+{% block content %}
+<div class="page-header">
+
+    <h1>
+        Category
+        <a href="{% url 'create_category' %}" class="top-menu">create_category</a>
+    </h1>
+</div>
+
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% for category in categories %}
+            <div class="post">
+                <div>
+                    {{category}}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+<div class="page-header">
+
+    <h1>Sub Category
+        <a href="{% url 'create_sub_category' %}" class="top-menu">create_sub_category</a>
+    </h1>
+</div>
+
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% for sub_category in sub_categories %}
+            <div class="post">
+                <div>
+                    {{sub_category}}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+<div class="page-header">
+
+    <h1>
+        <a href="{% url 'upload_excel' %}" class="top-menu">upload category excel file</a>
+    </h1>
+</div>
+{% endblock %}
